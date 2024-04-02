@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hem{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1>Välkommen till Min Me-sida</h1>
+    <p>Hej! Jag är [Ditt Namn] eller [Påhittad Figurs Namn], och detta är min me-sida för kursen i MVC. Jag är passionerad om webbutveckling och strävar efter att ständigt lära mig nya tekniker och förbättra mina färdigheter.</p>
+    <div>
+        <img src="{{ asset('images/your-image.jpg') }}" alt="Bild av mig eller påhittad figur" style="max-width: 300px;">
+    </div>
+</div>
+{% endblock %}

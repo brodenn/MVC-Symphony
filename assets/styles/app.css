@@ -1,0 +1,21 @@
+body {
+    margin: 0 auto;
+    max-width: 400px;
+    background: url('../images/background.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+.site-header {
+    height: 200px; /* Justera denna höjd efter behov */
+    background-image: url('../images/background.jpg'); /* Justera sökvägen enligt din filstruktur */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white; /* För textfärg, om du har text i sidhuvudet */
+}
+
+h1 {
+    border-bottom: 4px double #ccc;
+}

@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Redovisningstexter{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1>Redovisningstexter för Kursen</h1>
+
+    <nav>
+        <ul>
+            <li><a href="#kmom01">Kursmoment 1</a></li>
+            <li><a href="#kmom02">Kursmoment 2</a></li>
+            <!-- Lägg till fler länkar för ytterligare kursmoment här -->
+        </ul>
+    </nav>
+
+    <section id="kmom01">
+        <h2>Kursmoment 1</h2>
+        <p>Här är min redovisningstext för kursmoment 1...</p>
+    </section>
+
+    <section id="kmom02">
+        <h2>Kursmoment 2</h2>
+        <p>Här är min redovisningstext för kursmoment 2...</p>
+    </section>
+
+    <!-- Lägg till fler sektioner för ytterligare kursmoment här -->
+</div>
+{% endblock %}

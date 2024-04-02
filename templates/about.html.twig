@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Om Kursen{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1>Om MVC-Kursen</h1>
+    <div class="row">
+        <div class="col-md-6">
+            <p>Det här är en kurs om MVC (Model-View-Controller) designmönstret och dess implementering i webbutveckling. Syftet med kursen är att ge en djup förståelse för MVC och hur det kan användas för att skapa strukturerade och underhållbara webbapplikationer.</p>
+            <p>Hitta kursens repo på <a href="https://github.com/your-course-repo">GitHub</a>.</p>
+        </div>
+        <div class="col-md-6">
+            <p>Här är en representativ bild för MVC:</p>
+            <a href="{{ asset('img/glider.svg') }}">
+                <img src="{{ asset('img/glider.svg') }}" alt="Representativ MVC-bild" style="width:100%;">
+            </a>
+            <p>Kolla in mina projekt på <a href="https://github.com/your-github-repo">GitHub</a>.</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
