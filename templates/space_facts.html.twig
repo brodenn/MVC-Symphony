@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Space Facts{% endblock %}
+
+{% block body %}
+    <h1>Space Facts</h1>
+    <div class="space-facts">
+{% for fact in facts %}
+    <article>
+        <h2>{{ fact.name }}</h2>
+        <img src="{{ asset(fact.image) }}" alt="Image of {{ fact.name }}" class="space-fact-image">
+        <p>{{ fact.description }}</p>
+    </article>
+{% endfor %}
+
+
+    </div>
+{% endblock %}

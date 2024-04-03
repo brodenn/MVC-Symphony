@@ -1,32 +1,58 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-       <link rel="icon" href="{{ asset('img/glider.svg') }}">
-        {% block stylesheets %}
-            {{ encore_entry_link_tags('app') }}
-        {% endblock %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Galactic Explorations{% endblock %}</title>
+    <link rel="icon" href="{{ asset('build/images/space-icon.svg') }}">
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="wrapper">
+        <header class="site-header">
+            <h1 class="text-light">Galactic Explorations</h1>
+        </header>
 
-        {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
-            {% block importmap %}{{ importmap('app') }}{% endblock %}
-        {% endblock %}
-    </head>
-    <body>
+        <nav class="navbar navbar-expand navbar-dark bg-space">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="{{ path('home') }}">Home</a>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-space m-1" href="{{ path('about') }}">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-space m-1" href="{{ path('space_facts') }}">Space Facts</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-space m-1" href="{{ path('report') }}">Report</a>
+                    </li>
 
-    <header class="site-header" style="background-image: url({{ asset('img/background.jpg') }})">
-    <span class="site-title">My Symfony Site</span>
-</header>
-            <nav>
-    <ul>
-        <li><a href="{{ path('home') }}">Home</a></li>
-        <li><a href="{{ path('about') }}">About</a></li>
-        <li><a href="{{ path('lucky_number') }}">Lucky number</a></li>
-    </ul>
-</nav>
-        {% block body %}
+                <li class="nav-item">
+                    <a class="nav-link btn btn-space m-1" href="{{ path('api_index') }}">API</a> <!-- Add this line -->
+                </li>
+                </ul>
+            </div>
+        </nav>
 
-        {% endblock %}
-    </body>
+        <main class="main-content">
+            {% block body %}
+            <!-- Main content will be injected here -->
+            {% endblock %}
+        </main>
+
+        <footer class="text-light text-center p-3 bg-dark">
+            <p>&copy; {{ "now"|date("Y") }} Galactic Explorations. Journey to the stars!</p>
+        </footer>
+    </div>
+
+    {% block javascripts %}
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.min.js"></script>
+        {{ encore_entry_script_tags('app') }}
+    {% endblock %}
+</body>
 </html>

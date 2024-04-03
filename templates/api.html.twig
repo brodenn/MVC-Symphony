@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}API Index{% endblock %}
+
+{% block body %}
+<h1>API Overview</h1>
+<ul>
+    {% for name, url in routes %}
+    <li><a href="{{ url }}">{{ name | capitalize }}</a>: {{ url }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}

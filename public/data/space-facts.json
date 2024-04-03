@@ -1,0 +1,19 @@
+{
+    "facts": [
+      {
+        "name": "Mars",
+        "image": "img/mars-planet.jpg",
+        "description": "Mars is the fourth planet from the Sun and the second-smallest planet in the Solar System, being larger than only Mercury."
+      },
+      {
+        "name": "Mars Surface",
+        "image": "img/mars-surface.jpg",
+        "description": "The surface of Mars is primarily composed of tholeiitic basalt, although parts are more silica-rich than typical basalt."
+      },
+      {
+        "name": "The Sun",
+        "image": "img/the-sun.jpg",
+        "description": "The Sun is the star at the center of the Solar System. It is a nearly perfect sphere of hot plasma, heated to incandescence by nuclear fusion reactions in its core."
+      }
+    ]
+  }

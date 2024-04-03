@@ -1,21 +1,19 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Om Kursen{% endblock %}
+{% block title %}About the MVC Course{% endblock %}
 
 {% block body %}
 <div class="container">
-    <h1>Om MVC-Kursen</h1>
+    <h1>About the MVC Course</h1>
     <div class="row">
         <div class="col-md-6">
-            <p>Det här är en kurs om MVC (Model-View-Controller) designmönstret och dess implementering i webbutveckling. Syftet med kursen är att ge en djup förståelse för MVC och hur det kan användas för att skapa strukturerade och underhållbara webbapplikationer.</p>
-            <p>Hitta kursens repo på <a href="https://github.com/your-course-repo">GitHub</a>.</p>
+            <p>This course is about the MVC (Model-View-Controller) design pattern and its implementation in web development. The purpose of the course is to provide a deep understanding of MVC and how it can be used to create structured and maintainable web applications.</p>
+            <p>Find the course repo on <a href="https://github.com/your-course-repo" target="_blank">GitHub</a>.</p>
         </div>
         <div class="col-md-6">
-            <p>Här är en representativ bild för MVC:</p>
-            <a href="{{ asset('img/glider.svg') }}">
-                <img src="{{ asset('img/glider.svg') }}" alt="Representativ MVC-bild" style="width:100%;">
-            </a>
-            <p>Kolla in mina projekt på <a href="https://github.com/your-github-repo">GitHub</a>.</p>
+            <p>Here is a representative image for MVC:</p>
+            <img src="{{ asset('img/puzzle.jpg') }}" alt="Representative MVC image" style="max-width: 100%; height: auto;">
+            <p>Check out my projects on <a href="https://github.com/brodenn/MVC-Symphony" target="_blank">GitHub</a>.</p>
         </div>
     </div>
 </div>

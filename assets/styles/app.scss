@@ -1,0 +1,146 @@
+/* Space Theme Color Variables */
+:root {
+    --space-deep-blue: #0b3d91;
+    --space-purple: #1c1b4b;
+    --space-light-blue: #7f8fa6;
+    --star-white: #ffffff;
+    --planet-red: #ff7675;
+}
+
+/* Global Styles */
+html, body {
+    padding: 0;
+    margin: 0;
+    min-height: 100%;
+    font-family: 'Orbitron', sans-serif;
+    background: var(--space-deep-blue);
+    color: var(--star-white);
+    overflow-x: hidden;
+}
+
+/* Full Viewport Height Wrapper */
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Background Image with Stars */
+.wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('../images/stars-background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -1;
+    opacity: 0.6;
+}
+
+/* Navigation Styles */
+nav.navbar {
+    background: var(--space-deep-blue) url('../images/space-background2.png') repeat;
+    border-bottom: 3px solid var(--planet-red);
+}
+
+/* Navigation button styles */
+.nav-link {
+    background-color: var(--space-light-blue); // Light blue for a space-like feel
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 5px var(--star-white); // Adds a subtle glow effect
+    text-decoration: none;
+    display: inline-block;
+    margin: 0.25rem;
+
+    &:hover, &:focus {
+        background-color: var(--planet-red); // Changes color on hover for interaction
+        box-shadow: 0 0 15px var(--star-white); // Stronger glow on hover
+        color: var(--star-white);
+    }
+}
+
+
+.btn-space {
+    background-color: var(--space-deep-blue);
+    border: none;
+    color: var(--star-white);
+
+    &:hover {
+        background-color: var(--space-light-blue);
+        color: var(--planet-red);
+    }
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    padding: 0; // Removes padding from the nav-link to align with the new button styling
+}
+
+.bg-space {
+    background-image: url('../images/space-background.jpg'); // Path to your space background image
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+/* Use space-related images as background */
+.site-header {
+    background: var(--space-deep-blue) url('../images/space-background.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+
+/* Main Content Styles */
+.main-content {
+    flex-grow: 1;
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    padding: 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* Footer Styles */
+footer {
+    width: 100%;
+    background: var(--space-purple);
+    background: var(--space-purple) url('../images/stars-background.png') repeat;
+    color: var(--star-white);
+}
+
+/* Additional Styles for Space Elements */
+.space-element {
+    /* Styles for planets, stars, or any additional space elements */
+    animation: spinOrbit 60s linear infinite;
+}
+
+/* assets/styles/app.scss */
+
+.space-fact-image {
+    max-width: 100%;
+    height: auto;
+    max-height: 250px; /* Example max height */
+    width: 100%; /* This will ensure the image takes up all available width */
+    object-fit: cover; /* This will cover the area of the box without stretching the image */
+    display: block;
+    margin: 0 auto; /* Center the image */
+}
+
+/* Animation Keyframes */
+@keyframes spinOrbit {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .main-content {
+        padding: 1rem;
+    }
+}
