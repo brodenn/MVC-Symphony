@@ -1,0 +1,20 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Pig Game{% endblock %}
+
+{% block body %}
+<h1>Pig Game</h1>
+
+<p>This is a classical dice game called "Pig" where you roll a set of dice to try and reach 100 points. You can read more on the <a href="https://en.wikipedia.org/wiki/Pig_(dice_game)">basics of the game on Wikipedia</a>.</p>
+
+<p>These are the routes used in developing this exercise and game.</p>
+
+<ul>
+    <li><a href="{{ path('pig_start') }}">Landing page</a></li> {# Closing </a> tag added #}
+    <li><a href="{{ path('test_roll_dice') }}">Roll one dice</a></li> {# Closing </a> tag added #}
+    <li><a href="{{ path('test_roll_num_dices', {num: 5}) }}">Roll many dice</a></li> {# Closing </a> tag added #}
+    <li><a href="{{ path('test_dicehand', {num: 5}) }}">Roll dicehand</a></li> {# Closing </a> tag added #}
+    <li><a href="{{ path('pig_init_get') }}">Game Pig Start</a></li> {# Closing </a> tag added #}
+</ul>
+
+{% endblock %}

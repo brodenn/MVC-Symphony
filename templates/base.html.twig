@@ -31,15 +31,19 @@
                     </li>
 
                 <li class="nav-item">
-                    <a class="nav-link btn btn-space m-1" href="{{ path('api_index') }}">API</a> <!-- Add this line -->
+                    <a class="nav-link btn btn-space m-1" href="{{ path('api_index') }}">API</a>
                 </li>
+                <li class="nav-item">
+                <a class="nav-link btn btn-space" href="{{ path('pig_start') }}">Dice Game</a>
+                  </li>
+
                 </ul>
             </div>
         </nav>
 
         <main class="main-content">
             {% block body %}
-            <!-- Main content will be injected here -->
+
             {% endblock %}
         </main>
 
