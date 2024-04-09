@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Session Contents{% endblock %}
+
+{% block body %}
+<h1>Session Contents</h1>
+
+{% if sessionContent is empty %}
+    <p>The session is currently empty.</p>
+{% else %}
+    <div>
+        {% for key, value in sessionContent %}
+            <strong>{{ key }}:</strong>
+            {% if value is iterable %}
+                {% for item in value %}
+                    - {{ item }}<br>
+                {% endfor %}
+            {% else %}
+                {{ value }}
+            {% endif %}
+            <br>
+        {% endfor %}
+    </div>
+{% endif %}
+
+<a href="{{ path('session_delete') }}" class="btn btn-danger">Clear Session</a>
+{% endblock %}

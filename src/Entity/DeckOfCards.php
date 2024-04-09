@@ -30,5 +30,21 @@ public function __construct() {
         return $this->cards;
     }
 
+    public function dealCards(int $players, int $cardsPerPlayer) {
+        $dealtCards = [];
+        for ($i = 0; $i < $players; $i++) {
+            $dealtCards[$i] = $this->draw($cardsPerPlayer);
+        }
+        return $dealtCards;
+    }
+
+    public function toString(): string {
+        $output = [];
+        foreach ($this->cards as $card) {
+            $output[] = (string)$card;
+        }
+        return implode(', ', $output);
+    }
+
 
 }

@@ -39,6 +39,9 @@
 <li class="nav-item">
     <a class="nav-link btn btn-space m-1" href="{{ path('card_game') }}">Card Game</a>
 </li>
+            <li class="nav-item">
+                <a class="nav-link btn btn-space m-1" href="{{ path('session_index') }}">Sessions</a>
+            </li>
 
 
                 </ul>
@@ -55,6 +58,12 @@
             <p>&copy; {{ "now"|date("Y") }} Galactic Explorations. Journey to the stars!</p>
         </footer>
     </div>
+
+    {% for message in app.flashes('success') %}
+        <div class="alert alert-success">
+            {{ message }}
+        </div>
+    {% endfor %}
 
     {% block javascripts %}
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

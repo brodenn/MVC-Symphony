@@ -1,0 +1,19 @@
+{# templates/card/deal.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Dealt Cards{% endblock %}
+
+{% block body %}
+<h1>Dealt Cards</h1>
+{% for player, cards in dealtCards %}
+    <h3>Player {{ loop.index }}</h3>
+    <div class="player-cards">
+        {% for card in cards %}
+            <div class="card">{{ card }}</div>
+        {% endfor %}
+    </div>
+{% endfor %}
+<p>{{ remaining }} cards remaining in the deck.</p>
+<a href="{{ path('card_deck') }}" class="btn btn-primary">Back to Deck</a>
+{% endblock %}
