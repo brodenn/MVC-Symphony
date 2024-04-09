@@ -5,16 +5,18 @@ namespace App\Entity;
 class DeckOfCards {
     private $cards = [];
 
-    public function __construct() {
-        $suits = ['Hearts', 'Diamonds', 'Clubs', 'Spades'];
-        $values = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', 'King', 'Ace'];
+// In src/Entity/DeckOfCards.php
+public function __construct() {
+    $suits = ['Hearts', 'Diamonds', 'Clubs', 'Spades'];
+    $values = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
 
-        foreach ($suits as $suit) {
-            foreach ($values as $value) {
-                $this->cards[] = new Card($suit, $value);
-            }
+    foreach ($suits as $suit) {
+        foreach ($values as $value) {
+            $this->cards[] = new CardGraphic($suit, $value);
         }
     }
+}
+
 
     public function shuffle() {
         shuffle($this->cards);
@@ -27,4 +29,6 @@ class DeckOfCards {
     public function getCards() {
         return $this->cards;
     }
+
+
 }

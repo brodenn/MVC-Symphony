@@ -6,10 +6,12 @@
 <h1>Card Deck</h1>
 <div class="card-deck">
     {% for card in cards %}
-        <div>{{ card }}</div>
+        <div class="card">{{ card }}</div>
     {% endfor %}
 </div>
-<a href="{{ path('card_deck_shuffle') }}">Shuffle Deck</a>
-<a href="{{ path('card_deck_draw', {'number': 1}) }}">Draw One Card</a>
-<a href="{{ path('card_deck_draw', {'number': 5}) }}">Draw Five Cards</a>
+<div class="actions">
+    <a href="{{ path('card_deck_shuffle') }}" class="btn btn-primary">Shuffle Deck</a>
+    <a href="{{ path('card_deck_draw', {'number': 1}) }}" class="btn btn-secondary">Draw One Card</a>
+    <a href="{{ path('card_deck_draw', {'number': 5}) }}" class="btn btn-secondary">Draw Five Cards</a>
+</div>
 {% endblock %}

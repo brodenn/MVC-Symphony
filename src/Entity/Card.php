@@ -3,8 +3,8 @@
 namespace App\Entity;
 
 class Card {
-    private $suit;
-    private $value;
+    protected $suit;
+    protected $value;
 
     public function __construct($suit, $value) {
         $this->suit = $suit;
@@ -20,6 +20,6 @@ class Card {
     }
 
     public function __toString() {
-        return $this->value . ' of ' . $this->suit;
+        return $this->getValue() . ' of ' . $this->getSuit();
     }
 }
