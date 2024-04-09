@@ -6,7 +6,6 @@ class DeckOfCards
 {
     private $cards = [];
 
-    // In src/Entity/DeckOfCards.php
     public function __construct()
     {
         $suits = ['Hearts', 'Diamonds', 'Clubs', 'Spades'];

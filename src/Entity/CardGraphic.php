@@ -1,12 +1,10 @@
 <?php
 
-// src/Entity/CardGraphic.php
 
 namespace App\Entity;
 
 class CardGraphic extends Card
 {
-    // Mapping Unicode characters to card suits and values
     private static $unicodeMap = [
         'Spades' => [
             'A' => '🂡', '2' => '🂢', '3' => '🂣', '4' => '🂤', '5' => '🂥',
@@ -49,7 +47,6 @@ class CardGraphic extends Card
 
     public function __toString()
     {
-        // Uses getSymbol() to return the Unicode character for the card
         return $this->getSymbol();
     }
 }
