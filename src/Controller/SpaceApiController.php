@@ -23,13 +23,37 @@ class SpaceApiController extends AbstractController // Extend AbstractController
     public function apiIndex(): Response
     {
         $routes = [
-            'space_fact' => $this->generateUrl('api_space_fact', [], UrlGeneratorInterface::ABSOLUTE_URL),
-            'quote' => $this->generateUrl('api_quote', [], UrlGeneratorInterface::ABSOLUTE_URL),
-            // Add more routes here as needed
+            // Existing routes
+            'space_fact' => [
+                'url' => $this->generateUrl('api_space_fact', [], UrlGeneratorInterface::ABSOLUTE_URL),
+                'description' => 'Get a random space fact.'
+            ],
+            'quote' => [
+                'url' => $this->generateUrl('api_quote', [], UrlGeneratorInterface::ABSOLUTE_URL),
+                'description' => 'Get a daily inspirational quote about space.'
+            ],
+            // New routes from CardGameApiController
+            'deck_view' => [
+                'url' => $this->generateUrl('api_deck', [], UrlGeneratorInterface::ABSOLUTE_URL),
+                'description' => 'View the current state of the deck.'
+            ],
+            'deck_shuffle' => [
+                'url' => $this->generateUrl('api_deck_shuffle', [], UrlGeneratorInterface::ABSOLUTE_URL),
+                'description' => 'Shuffle the current deck.'
+            ],
+            'deck_draw' => [
+                'url' => $this->generateUrl('api_deck_draw', [], UrlGeneratorInterface::ABSOLUTE_URL),
+                'description' => 'Draw one or more cards from the deck.'
+            ],
+            'deck_deal' => [
+                'url' => $this->generateUrl('api_deck_deal', ['players' => 2, 'cards' => 3], UrlGeneratorInterface::ABSOLUTE_URL), // Example parameters
+                'description' => 'Deal cards to a number of players.'
+            ],
         ];
 
         return $this->render('api.html.twig', ['routes' => $routes]);
     }
+
 
     #[Route("/api/quote", name: "api_quote")]
     public function dailyQuote(): JsonResponse

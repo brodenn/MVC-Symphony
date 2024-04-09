@@ -2,35 +2,41 @@
 
 namespace App\Entity;
 
-class DeckOfCards {
+class DeckOfCards
+{
     private $cards = [];
 
-// In src/Entity/DeckOfCards.php
-public function __construct() {
-    $suits = ['Hearts', 'Diamonds', 'Clubs', 'Spades'];
-    $values = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
+    // In src/Entity/DeckOfCards.php
+    public function __construct()
+    {
+        $suits = ['Hearts', 'Diamonds', 'Clubs', 'Spades'];
+        $values = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
 
-    foreach ($suits as $suit) {
-        foreach ($values as $value) {
-            $this->cards[] = new CardGraphic($suit, $value);
+        foreach ($suits as $suit) {
+            foreach ($values as $value) {
+                $this->cards[] = new CardGraphic($suit, $value);
+            }
         }
     }
-}
 
 
-    public function shuffle() {
+    public function shuffle()
+    {
         shuffle($this->cards);
     }
 
-    public function draw($number = 1) {
+    public function draw($number = 1)
+    {
         return array_splice($this->cards, 0, $number);
     }
 
-    public function getCards() {
+    public function getCards()
+    {
         return $this->cards;
     }
 
-    public function dealCards(int $players, int $cardsPerPlayer) {
+    public function dealCards(int $players, int $cardsPerPlayer)
+    {
         $dealtCards = [];
         for ($i = 0; $i < $players; $i++) {
             $dealtCards[$i] = $this->draw($cardsPerPlayer);
@@ -38,7 +44,8 @@ public function __construct() {
         return $dealtCards;
     }
 
-    public function toString(): string {
+    public function toString(): string
+    {
         $output = [];
         foreach ($this->cards as $card) {
             $output[] = (string)$card;

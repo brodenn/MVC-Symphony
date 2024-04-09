@@ -36,7 +36,8 @@ class CardController extends AbstractController
     }
 
     #[Route('/card/deck/draw/{number}', name: 'card_deck_draw', defaults: ['number' => 1], requirements: ['number' => '\d+'])]
-    public function draw(SessionInterface $session, int $number = 1): Response {
+    public function draw(SessionInterface $session, int $number = 1): Response
+    {
         // Ensure a deck exists in the session; otherwise, create a new one
         $deck = $session->get('deck', new DeckOfCards());
         $deck->shuffle(); // Optionally shuffle before drawing, if needed
@@ -57,15 +58,16 @@ class CardController extends AbstractController
     }
 
     #[Route('/card/deck/deal/{players}/{cards}', name: 'card_deck_deal', requirements: ['players' => '\d+', 'cards' => '\d+'])]
-public function deal(SessionInterface $session, int $players, int $cards): Response {
-    $deck = $session->get('deck', new DeckOfCards());
-    $dealtCards = $deck->dealCards($players, $cards);
-    $session->set('deck', $deck); // Save the updated deck back to the session
+    public function deal(SessionInterface $session, int $players, int $cards): Response
+    {
+        $deck = $session->get('deck', new DeckOfCards());
+        $dealtCards = $deck->dealCards($players, $cards);
+        $session->set('deck', $deck); // Save the updated deck back to the session
 
-    return $this->render('card/deal.html.twig', [
-        'dealtCards' => $dealtCards,
-        'remaining' => count($deck->getCards()),
-    ]);
-}
+        return $this->render('card/deal.html.twig', [
+            'dealtCards' => $dealtCards,
+            'remaining' => count($deck->getCards()),
+        ]);
+    }
 
 }

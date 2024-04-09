@@ -1,4 +1,6 @@
 {
+    "name": "yourvendorname/yourprojectname",
+    "description": "A brief description of what your project does",
     "type": "project",
     "license": "proprietary",
     "minimum-stability": "stable",
@@ -75,14 +77,12 @@
         "symfony/polyfill-php82": "*"
     },
     "scripts": {
-        "csfix": "tools/php-cs-fixer/vendor/bin/php-cs-fixer fix --config=/home/v4rangian/dbwebb-kurser/mvc/me/report/.php-cs-fixer.dist.php src",
-        "csfix:dry": "tools/php-cs-fixer/vendor/bin/php-cs-fixer fix --config=/home/v4rangian/dbwebb-kurser/mvc/me/report/.php-cs-fixer.dist.php src --dry-run -v",
-            "auto-scripts": {
+        "csfix": "tools/php-cs-fixer/vendor/bin/php-cs-fixer fix --config=/home/v4rangian/dbwebb-kurser/mvc/me/report/tools/php-cs-fixer/php-cs-fixer.dist.php src",
+        "csfix:dry": "tools/php-cs-fixer/vendor/bin/php-cs-fixer fix --config=/home/v4rangian/dbwebb-kurser/mvc/me/report/tools/php-cs-fixer/php-cs-fixer.dist.php src --dry-run -v",
+        "auto-scripts": {
             "cache:clear": "symfony-cmd",
             "assets:install %PUBLIC_DIR%": "symfony-cmd",
-            "importmap:install": "symfony-cmd",
-            "csfix": "tools/php-cs-fixer/vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.dist.php src tests",
-            "csfix:dry": "tools/php-cs-fixer/vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.dist.php src tests --dry-run -v"
+            "importmap:install": "symfony-cmd"
         },
         "post-install-cmd": [
             "@auto-scripts"
@@ -91,6 +91,7 @@
             "@auto-scripts"
         ]
     },
+
 
     "conflict": {
         "symfony/symfony": "*"

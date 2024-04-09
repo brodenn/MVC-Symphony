@@ -4,9 +4,13 @@
 
 {% block body %}
 <h1>API Overview</h1>
+<p>Welcome to our API. Here you can find information on how to access different features.</p>
 <ul>
-    {% for name, url in routes %}
-    <li><a href="{{ url }}">{{ name | capitalize }}</a>: {{ url }}</li>
+    {% for name, route in routes %}
+        <li>
+            <strong>{{ name | capitalize }}</strong>: <a href="{{ route.url }}">{{ route.url }}</a>
+            <p>{{ route.description }}</p>
+        </li>
     {% endfor %}
 </ul>
 {% endblock %}
