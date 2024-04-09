@@ -10,16 +10,13 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class CardController extends AbstractController
 {
-    /**
-     * @Route("/card/deck", name="card_deck")
-     */
+    #[Route("/card/deck", name: "card_deck")]
     public function deck(SessionInterface $session): Response
     {
         if (!$session->has('deck')) {
             $session->set('deck', new DeckOfCards());
         }
 
-        /** @var DeckOfCards $deck */
         $deck = $session->get('deck');
 
         return $this->render('card/deck.html.twig', [
@@ -27,25 +24,20 @@ class CardController extends AbstractController
         ]);
     }
 
-    /**
-     * @Route("/card/deck/shuffle", name="card_deck_shuffle")
-     */
+    #[Route("/card/deck/shuffle", name: "card_deck_shuffle")]
     public function shuffle(SessionInterface $session): Response
     {
         $deck = new DeckOfCards();
         $deck->shuffle();
-
         $session->set('deck', $deck);
+
 
         return $this->redirectToRoute('card_deck');
     }
 
-    /**
-     * @Route("/card/deck/draw/{number}", name="card_deck_draw", defaults={"number": 1}, requirements={"number"="\d+"})
-     */
+    #[Route("/card/deck/draw/{number}", name: "card_deck_draw", defaults: ["number" => 1], requirements: ["number" => "\d+"])]
     public function draw(SessionInterface $session, int $number): Response
     {
-        /** @var DeckOfCards $deck */
         $deck = $session->get('deck', new DeckOfCards());
 
         $cardsDrawn = $deck->draw($number);
@@ -54,4 +46,11 @@ class CardController extends AbstractController
             'cards' => $cardsDrawn,
         ]);
     }
+
+    #[Route("/card/game", name: "card_game")]
+    public function cardGame(): Response
+    {
+        return $this->render('card/game.html.twig');
+    }
+
 }

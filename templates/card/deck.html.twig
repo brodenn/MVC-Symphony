@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Card Deck{% endblock %}
+
+{% block body %}
+<h1>Card Deck</h1>
+<div class="card-deck">
+    {% for card in cards %}
+        <div>{{ card }}</div>
+    {% endfor %}
+</div>
+<a href="{{ path('card_deck_shuffle') }}">Shuffle Deck</a>
+<a href="{{ path('card_deck_draw', {'number': 1}) }}">Draw One Card</a>
+<a href="{{ path('card_deck_draw', {'number': 5}) }}">Draw Five Cards</a>
+{% endblock %}
