@@ -16,13 +16,10 @@ class SessionController extends AbstractController
         $sessionContent = [];
         foreach ($session->all() as $key => $value) {
             if ($value instanceof DeckOfCards) {
-                // Convert DeckOfCards object to a descriptive array
-                // For example, list all cards in the deck
                 $cards = $value->getCards();
                 $cardDescriptions = [];
                 foreach ($cards as $card) {
-                    // Assuming Card has a method to return its description
-                    $cardDescriptions[] = (string)$card; // or $card->getDescription() if available
+                    $cardDescriptions[] = (string)$card;
                 }
                 $sessionContent[$key] = $cardDescriptions;
             } else {

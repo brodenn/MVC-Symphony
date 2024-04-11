@@ -30,7 +30,6 @@ class CardGameApiController extends AbstractController
         return new JsonResponse(['cards' => $cards]);
     }
 
-    // Adjusted to use a GET request for demonstration purposes
     #[Route("/api/deck/shuffle", name: "api_deck_shuffle", methods: ["GET"])]
     public function shuffleDeck(SessionInterface $session): JsonResponse
     {
@@ -69,7 +68,6 @@ class CardGameApiController extends AbstractController
     }
 
 
-    // Adjusting deal to use GET for demonstration purposes
     #[Route("/api/deck/deal/{players}/{cards}", name: "api_deck_deal", methods: ["GET"], requirements: ["players" => "\d+", "cards" => "\d+"])]
     public function dealCards(SessionInterface $session, int $players, int $cards): JsonResponse
     {

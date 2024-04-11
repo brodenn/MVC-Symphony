@@ -38,16 +38,16 @@ class CardController extends AbstractController
     #[Route('/card/deck/draw/{number}', name: 'card_deck_draw', defaults: ['number' => 1], requirements: ['number' => '\d+'])]
     public function draw(SessionInterface $session, int $number = 1): Response
     {
-        // Ensure a deck exists in the session; otherwise, create a new one
+
         $deck = $session->get('deck', new DeckOfCards());
-        $deck->shuffle(); // Optionally shuffle before drawing, if needed
+        $deck->shuffle();
 
         $cardsDrawn = $deck->draw($number);
-        $session->set('deck', $deck); // Save the modified deck back into the session
+        $session->set('deck', $deck);
 
         return $this->render('card/draw.html.twig', [
             'cards' => $cardsDrawn,
-            'remaining' => count($deck->getCards()), // Pass the remaining number of cards
+            'remaining' => count($deck->getCards()),
         ]);
     }
 
@@ -62,7 +62,7 @@ class CardController extends AbstractController
     {
         $deck = $session->get('deck', new DeckOfCards());
         $dealtCards = $deck->dealCards($players, $cards);
-        $session->set('deck', $deck); // Save the updated deck back to the session
+        $session->set('deck', $deck);
 
         return $this->render('card/deal.html.twig', [
             'dealtCards' => $dealtCards,

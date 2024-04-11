@@ -8,7 +8,7 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 
-class SpaceApiController extends AbstractController // Extend AbstractController here
+class SpaceApiController extends AbstractController
 {
     #[Route("/api/space/fact", name: "api_space_fact")]
     public function apiSpaceFact(): JsonResponse

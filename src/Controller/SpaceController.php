@@ -23,12 +23,11 @@ class SpaceController extends AbstractController
     #[Route('/', name: 'home')]
     public function home(): Response
     {
-        // Define the fictional character details
         $character = [
             'name' => 'Commander Cosmo',
             'role' => 'Interstellar Navigator',
             'bio' => 'Commander Cosmo, known for navigating the treacherous asteroid fields of the Outer Rim, has dedicated their life to charting the cosmos and discovering new frontiers. With a heart as vast as space itself, Cosmo inspires countless budding astronauts to reach for the stars.',
-            'image' => 'img/astronaut.jpg' // Ensure the image path is correct
+            'image' => 'img/astronaut.jpg'
         ];
 
         return $this->render('home.html.twig', [
