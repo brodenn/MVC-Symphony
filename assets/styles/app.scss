@@ -48,19 +48,19 @@ nav.navbar {
 
 /* Navigation button styles */
 .nav-link {
-    background-color: var(--space-light-blue); // Light blue for a space-like feel
+    background-color: var(--space-light-blue);
     border: none;
     padding: 0.5rem 1rem;
     border-radius: 0.25rem;
     transition: all 0.3s ease;
-    box-shadow: 0 0 5px var(--star-white); // Adds a subtle glow effect
+    box-shadow: 0 0 5px var(--star-white);
     text-decoration: none;
     display: inline-block;
     margin: 0.25rem;
 
     &:hover, &:focus {
-        background-color: var(--planet-red); // Changes color on hover for interaction
-        box-shadow: 0 0 15px var(--star-white); // Stronger glow on hover
+        background-color: var(--planet-red);
+        box-shadow: 0 0 15px var(--star-white);
         color: var(--star-white);
     }
 }
@@ -78,11 +78,11 @@ nav.navbar {
 }
 
 .navbar-dark .navbar-nav .nav-link {
-    padding: 0; // Removes padding from the nav-link to align with the new button styling
+    padding: 0;
 }
 
 .bg-space {
-    background-image: url('../images/space-background.jpg'); // Path to your space background image
+    background-image: url('../images/space-background.jpg');
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -116,7 +116,6 @@ footer {
 
 /* Additional Styles for Space Elements */
 .space-element {
-    /* Styles for planets, stars, or any additional space elements */
     animation: spinOrbit 60s linear infinite;
 }
 
@@ -125,11 +124,11 @@ footer {
 .space-fact-image {
     max-width: 100%;
     height: auto;
-    max-height: 250px; /* Example max height */
-    width: 100%; /* This will ensure the image takes up all available width */
-    object-fit: cover; /* This will cover the area of the box without stretching the image */
+    max-height: 250px;
+    width: 100%;
+    object-fit: cover;
     display: block;
-    margin: 0 auto; /* Center the image */
+    margin: 0 auto;
 }
 
 /* Animation Keyframes */
@@ -143,4 +142,18 @@ footer {
     .main-content {
         padding: 1rem;
     }
+}
+
+.card-deck, .drawn-cards, .player-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 10px; /* Space between cards */
+    margin-bottom: 20px;
+}
+
+.card {
+    padding: 5px;
+    text-align: center;
+    font-size: 80px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }

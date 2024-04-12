@@ -27,9 +27,9 @@ class CardGraphic extends Card
             'J' => '🃛', 'Q' => '🃝', 'K' => '🃞'
         ],
         'Joker' => [
-            'Black' => '🃏', // Playing Card Black Joker
-            'Red' => '🂿', // Playing Card Red Joker
-            'White' => '🃟' // Playing Card White Joker
+            'Black' => '🃏',
+            'Red' => '🂿',
+            'White' => '🃟'
         ]
     ];
 
