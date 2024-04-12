@@ -15,12 +15,48 @@
 
     <section id="kmom01">
         <h2>Kursmoment 1</h2>
-        <p>Här är min redovisningstext för kursmoment 1...</p>
+        <h3>Förkunskaper och erfarenheter kring objektorientering</h3>
+        <p>Min resa inom objektorienterad programmering (OOP) började med en kurs i Python, där jag utvecklade ett spel utan att använda något specifikt ramverk. Den kursen, "OOPython", gav mig en solid grund i OOP-principer som klasser, objekt, arv, och polymorfism. Dessutom har jag erfarenhet från att arbeta med Pico, ett PHP-baserat ramverk som på vissa sätt liknar Symfony, vilket gav mig insikt i hur OOP används inom webbutveckling.</p>
+                <h3>PHPs modell för klasser och objekt</h3>
+        <p>I PHP är klasser och objekt grundstenarna för objektorienterad programmering. En klass fungerar som en mall för att skapa objekt (instanser) och definierar både egenskaper (properties) och metoder (funktioner) som dessa objekt kommer att ha. För att komma igång med objektorienterad programmering i PHP börjar man med att definiera en klass och sedan skapa objekt baserat på denna klass. Detta gör det möjligt att paketera data och funktionalitet samman, vilket leder till mer återanvändbar och modulär kod. Objekt kan även sparas i sessioner för att bevara tillstånd över flera sidförfrågningar, vilket är praktiskt för exempelvis användarautentisering. Namespace tillåter gruppering av relaterade klasser och undviker namnkonflikter. Autoloader-funktioner automatiserar inkluderingen av klassfiler, vilket förenklar kodhanteringen ytterligare. När du arbetar med objekt i PHP kan du hantera deras egenskaper direkt, vilket innebär att du kan läsa eller modifiera ett objekts tillstånd genom att direkt tilldela värden till dess egenskaper eller hämta dessa värden, förutsatt att de är tillgängliga enligt deras synlighetsregler (public, protected, private).</p>
+                <h3>Reflektion över me/report-uppgiften och "PHP The Right Way"</h3>
+        <p>Reflektion över me/report-uppgiften och "PHP The Right Way" har gett mig värdefulla insikter i att utveckla med PHP på ett modernt och säkert sätt. Genom att arbeta med Symfony i me/report-uppgiften fick jag erfarenhet av ett ramverk som erbjuder en strukturerad miljö och återanvändbara komponenter, vilket underlättar byggandet av robusta webbapplikationer. Denna upplevelse, kombinerat med min tidigare erfarenhet från Pico-ramverket, har stärkt min förståelse för hur modern PHP-utveckling kan och bör ske.
+
+"Dokumentet "PHP The Right Way" öppnade mina ögon för vikten av att följa bästa praxis och använda sig av de verktyg som communityn rekommenderar. De sektioner som behandlade säkerhet och testning var särskilt givande. Tidigare hade jag inte lagt stor vikt vid dessa områden, men jag inser nu deras betydelse för att skapa säkra och pålitliga applikationer. Säkerhetsaspekterna påminner mig om att utvecklingen inte bara handlar om funktionalitet utan även om att skydda användardata och systemresurser. Testningsdelen har inspirerat mig att integrera tester tidigt i utvecklingsprocessen för att upptäcka och åtgärda problem innan de blir allvarliga.
+
+Sammanfattningsvis har denna uppgift och guiden "PHP The Right Way" berikat min kunskap och gett mig verktygen att bli en mer kompetent och medveten PHP-utvecklare. Jag ser fram emot att tillämpa dessa lärdomar i framtida projekt, med ett särskilt fokus på säkerhet och testning för att höja kvaliteten på min kod.</p>
+                <h3>TIL (Today I Learned)</h3>
+        <p>Min TIL för detta kursmoment har varit upptäckten och värdet av att använda en modern utvecklingsmiljö med Symfony och de verktyg som "PHP The Right Way" rekommenderar. Jag lärde mig särskilt mycket om vikten av säkerhet och testning inom PHP-utveckling. Detta har lett till en djupare förståelse för hur dessa aspekter inte bara förbättrar kvaliteten på den kod jag skriver, utan även skyddar användardata och systemets integritet. Dessutom har jag fått insikt i hur man strukturerar och organiserar kod på ett effektivt sätt genom att använda namnrymder och autoladdning, vilket underlättar underhåll och skalbarhet av applikationer. </p>
     </section>
 
     <section id="kmom02">
         <h2>Kursmoment 2</h2>
-        <p>Här är min redovisningstext för kursmoment 2...</p>
+        <h3>Förklara kort de objektorienterade konstruktionerna arv, komposition, interface och trait och hur de används i PHP.
+</h3>
+        <p>Arv (is-a relation): Ett sätt att dela funktionalitet och egenskaper mellan klasser, där en underklass ärver från en överklass. Som ett exempel i mitt projekt utvidgas Dice-klassen med DiceGraphic för att lägga till en grafisk representation.
+
+Komposition (has-a relation): Används för att inkludera instanser av en klass inom en annan klass. Ett exempel är  DiceHand som innehåller objekt av typen Dice, vilket demonstrerar komposition.
+
+Interface i PHP definierar ett kontrakt för klasser att implementera. Detta garanterar att klasser följer en specifik struktur av metoder, vilket är kritiskt för att säkerställa att olika delar av applikationen kan interagera smidigt.
+
+Traits är återanvändbara kodblock som kan inkluderas i klasser. Vi använde traits för att tillhandahålla återanvändbar funktionalitet som histogramrendering i våra tärningsklasser.
+</p>        <h3>Berätta om din implementation från uppgiften. Hur löste du uppgiften, är du nöjd/missnöjd, vilken förbättringspotential ser du i din koden och dina klasser?
+</h3>
+<p> Jag skapade tre huvudklasser: Card, DeckOfCards, och CardHand.
+
+Card: Grundläggande klass för enskilda kort med egenskaper som suit och value.
+
+DeckOfCards: Hanterar en samling av Card-objekt. Inkluderar metoder för att blanda kortleken och dra kort.
+
+CardHand: Används för att representera en spelares hand, håller ett antal kort. Jag implementerade kontroller för att hantera webbsidesinteraktioner, såsom att visa och blanda kortlek, dra kort, och initiera en ny spelomgång.
+
+Jag använde Symfony's sessionshantering för att bibehålla kortleken över flera förfrågningar och sidvisningar. Definierade routes för de olika funktionerna i spelet. Skapade Twig templates för att visa kort och spelinformation på ett användarvänligt sätt.
+</p><h3>Vilka är dina reflektioner så här långt med att jobb i Symfony med applikationskod enligt MVC?</h3>
+<p>Att arbeta med Symfony och dess MVC-arkitektur har varit både utmanande och givande. Ramverkets struktur hjälper till att tydligt separera logik, data och presentation, vilket gör koden mer organiserad och underhållsvänlig.
+Trots en brant lärandekurva har de omfattande verktygen och den utmärkta dokumentationen underlättat inlärningsprocessen avsevärt.
+Jag har verkligen värderat den flexibilitet som Symfony erbjuder, vilket gör det möjligt för mig att skräddarsy applikationen efter behov samtidigt som ramverket främjar god kodstandard, något som i sin tur har effektiviserat utvecklingsprocessen.
+Sammanfattningsvis har min erfarenhet med Symfony förbättrat min förmåga att utveckla robusta och effektiva webbapplikationer, vilket har berikat min tekniska kompetens avsevärt.</p><h3>Vilken är din TIL för detta kmom?</h3><p>I detta kursmoment lärde jag mig betydelsen av att effektivt implementera och använda objektorienterade principer såsom arv och komposition i PHP, vilket underlättade skapandet av en välstrukturerad och skalbar kodbas. Jag upptäckte även hur kraftfullt Symfony-ramverket är för webbutveckling, speciellt när det gäller att hantera komplexa applikationsflöden och användarsessioner. Slutligen insåg jag vikten av god kodstandard och dokumentation för att underlätta underhåll och framtida utveckling av projektet.
+</p
     </section>
 
 </div>
